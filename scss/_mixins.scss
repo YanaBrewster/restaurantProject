@@ -1,0 +1,12 @@
+@mixin headings{
+	color: #333333;
+	font-family: 'Oswald', sans-serif;
+	font-style: bold;
+	text-shadow: $text-shadow;
+}
+
+@mixin text-body{
+	color: #333333;
+	font-family: 'Oswald', sans-serif;
+	text-shadow: $text-shadow;
+}
