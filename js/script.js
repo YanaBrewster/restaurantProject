@@ -1,3 +1,7 @@
+$(document).ready(function(){
+
+})
+
 function showNav(){
     var menu = document.getElementById("list");
     if(menu.style.display === 'block'){

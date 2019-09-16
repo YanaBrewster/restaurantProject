@@ -10,3 +10,10 @@
 	font-family: 'Oswald', sans-serif;
 	text-shadow: $text-shadow;
 }
+
+
+@mixin clear(){
+	clear: both;
+	content: '';
+	display: table;
+}

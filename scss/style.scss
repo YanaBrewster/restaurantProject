@@ -1,7 +1,5 @@
-
 @import 'variables';
-
-@import 'mixins'; 
+@import 'mixins';
 
 *{
 	box-sizing:border-box;
@@ -11,26 +9,17 @@
 	list-style-type: none;
 }
 
-.hide { 
+.hide {
 	display: none;
 }
 
 
 
-//IMAGES
-
-#menu-icon{
-    display: block;
-    padding-top: 40px;
-    margin-right: 40px;
-    float: right;
-    color: white;
-    font-size: 70px;
-}
+//ICONS
 
 .fa-phone{
  	color: white;
- 	font-size: 30px;
+ 	font-size: 2em;
 }
 
 .img__reviews--center img{
@@ -41,19 +30,20 @@
 .fb-logo img{
 	float: right;
 	right: 0;
-	margin-right: 20px;
+	margin-right: 5%;
 
 }
 
-.p__reviews--center img{
+// IMAGES
+
+.reviews--center img{
 	text-align: center;
-	width: 100%;
 	margin: 0 auto;
+	display: block;
 }
 .container img {
-  padding: none;
-  width: 100%;
-  height: auto;
+  padding: 0px;
+  // width: 100%;
 }
 
 .menu-items img{
@@ -71,9 +61,10 @@
 iframe{
 	border: none;
 	width: 100%;
+	height: 400px;
 }
 
-// COLOUR 
+// COLOUR
 
 .bg-color--gray{
 	background-color: #F2F2F2;
@@ -92,65 +83,47 @@ p {
 	width: 34em;
 }
 
-.p__about--center p{
-	text-align: center;
-	margin: 0 auto;
-}
-
-.p__reviews--center p{
-	text-align: center;
-	width: 24em;
-	margin: 0 auto;
-	padding: 30px;
-}
-
-.p__reviews--center__mobile p{
-	text-align: center;
-	width: 768;
-	font-size: 18px;
-	margin: 0 auto;
-	padding: 30px;
-}
-
-
 .container .p__menu--center p{
 	position: absolute;
 	bottom: 45%;
 	right: -5%;
-	cursor: pointer;
 	text-align: center;
-	font-size: 18px;
-	width: 24em;
+	font-size: 1.5em;
 	text-shadow: $text-shadow;
 	text-align: center;
 	vertical-align: middle;
 	display: inline-block;
-	padding: 0px 70px 10px 70px;
+	padding: 0px 10% 0px 10%;
 }
 
 .p__menu-items--center p{
 	text-align: center;
-	width: 15em;
 	}
+
+.p__center p{
+	text-align: center;
+	display:block;
+  margin:0 auto;
+}
 
 // HEADINGS
 
 h2{
 	@include headings;
-	font-size: 40px;
+	font-size: 3em;
 }
 
 h3{
 	@include headings;
-	font-size: 36px;
+	font-size: 2.5em;
 	text-align: center;
 }
 
 h4{
 	@include headings;
-	font-size: 30px;
+	font-size: 2em;
 	text-align: left;
-	padding: 10px;
+	padding: 1%;
 }
 
 
@@ -165,24 +138,19 @@ h4{
 }
 
 // ROW, COL AND PAGE CONTAINER
+
 .page-container {
-	max-width: 1920px;
-	height: 100vh;
-	margin: 0 auto;
-	padding-top: 151px;
+	@include clear;
 }
 
 .row{
-    margin-bottom: 30px;
     &::after{
-        clear: both;
-        display: block;
-        content: '';
+	@include clear;
     }
 }
 
 .row--no-padding{
-    margin-bottom: none;
+    margin-bottom: 0px;
 }
 
 .col{
@@ -192,11 +160,14 @@ h4{
 // NAVIGATION
 
 .navigation {
-	height: 151px; 
+	height: 13%;
+	@media screen and (min-width: $lgWidth){
+	height: 15%;
+		}
 }
 
 .nav__fixed{
-	overflow: hidden;
+	// overflow: hidden;
 	position: fixed;
 	top: 0;
   	width: 100%;
@@ -204,36 +175,84 @@ h4{
 }
 
 #logo{
-	padding-top: 25px;
- 	margin-left: 20px;
- 	width: 70%;
+	padding-top: 4%;
+ 	margin-left: 4%;
+ 	width: 100%;
 }
 
-header nav {
-	padding-top: 50px;
+
+#list {
 	float: right;
+	margin-right: 4%;
+	padding-top: 2%;
+	ul{
+			list-style: none;
+			}
+	li{
+			font-family: 'Oswald', sans-serif;
+			text-transform: lowercase;
+			font-size: 3em;
+			color: white;
+			text-shadow: $text-shadow;
 
+	 @media screen and (min-width: $mdWidth){
+		 display:inline-block !important;
+		 font-size: 2em;
+		 margin: 0 12px;
+		 padding-top: 4%;
+			#navActive, li:active, {
+			border-bottom: 3px solid $brand-color;
+			}
+	}
+	@media screen and (min-width: $lgWidth){
+			display:inline-block !important;
+			font-size: 2.5em;
+			margin: 0 12px;
+			padding-top: 1%;
+			#navActive, li:hover, {
+			border-bottom: 3px solid $brand-color;
+			}
+	}
 }
 
-header nav ul li {
-    font-family: 'Oswald', sans-serif;
-    text-transform: lowercase;
-    font-size: 30px;
-    color: white;
-    float: left;
-    padding-right: 40px;
-    text-shadow: $text-shadow;
-}
-
-nav ul li {
-	width: 26%;
-    text-align: center;
-}
-
-header nav ul li a:hover, #nav__active {
+ a:hover, #nav__active {
 	border-bottom: 3px solid white;
 }
+}
 
+
+
+// MOBILE NAVIGATION
+
+@media screen and (max-width: $mdWidth){
+
+	#menu-icon{
+			display: block;
+			padding-top: 5%;
+			margin-right: 5%;;
+			float: right;
+			color: white;
+			font-size: 4em;
+	}
+
+  #list{
+        display: none;
+        float: right;
+        clear: both;
+        background-color: white;
+        width: 100%;
+        padding: 1% 5% 5% 5%;
+				height: 20%;
+    }
+
+    #list ul li{
+        display: block;
+        float: none;
+        padding-top: 20px;
+        font-size: 1.875em;
+				color: $brand-color;
+    }
+}
 
 // FOOTER
 
@@ -298,68 +317,25 @@ a:hover {
 
 // BUTTON
 
-.menu--small .btn {
+ .btn {
 	text-align: center;
-	background-color:$brand-color;
-	font-size: 25px;
-	color: white;
 	text-shadow: $text-shadow;
 	text-align: center;
 	vertical-align: middle;
 	display: inline-block;
-	border-radius: 50px;
-	border: none;
-	padding: 2px 25px 2px 25px;
 	margin: 0 auto;
-
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 1920px; 
-}
-
-
-
-.container .btn--menu {
-	position: absolute;
-	bottom: 8%;
-	right: -5%;
-	transform: translate(-35%, -20%);
-	-ms-transform: translate(-50%, -50%);
 	cursor: pointer;
-	text-align: center;
-	background-color: hsla(360, 100%, 100%, 0.6);
-	font-size: 40px;
+	background-color: hsla(360, 100%, 100%, 0.2);
+	font-size: 2em;
 	color: white;
-	text-shadow: $button-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
 	border-radius: 2px;
 	border: 5px double white;
 	padding: 0px 70px 10px 70px;
 }
 
-.container .btn--reservations {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	cursor: pointer;
-	text-align: center;
-	background-color: hsla(360, 100%, 100%, 0.6);
-	font-size: 40px;
-	color: white;
-	text-shadow: $button-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	border-radius: 2px;
-	border: 5px double white;
-	padding: 2px 70px 10px 70px;
+.container {
+  position: relative;
+  width: 100%;
 }
 
 
@@ -371,247 +347,9 @@ a:hover {
 // RESPONSIVE
 
 @media (min-width: $mdWidth){
-
-#menu-icon{
-    display: none;
-}
-
-.hide { 
-	display: block;
-}
-.hide__mobile {
-	display: none;
-}
-
-
-#logo{
-	padding-top: 25px;
- 	margin-left: 20px;
- 	width: 25%;
-}
-
-.p__about--center p{
-	text-align: center;
-	margin: 0 auto;
-	font-size: 22px;
-
-}
-
-// IFRAME
-
-iframe{
-	border: none;
-	width: 100%;
-	height: 400px;
-}
-
-.container .btn--menu {
-	position: absolute;
-	bottom: 15%;
-	right: 0;
-	transform: translate(-35%, -20%);
-	-ms-transform: translate(-50%, -50%);
-	cursor: pointer;
-	text-align: center;
-	background-color: hsla(360, 100%, 100%, 0.6);
-	font-size: 40px;
-	color: white;
-	text-shadow: $button-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	border-radius: 2px;
-	border: 5px double white;
-	padding: 0px 70px 10px 70px;
-}
-
-
-.container .p__menu--center p{
-	position: absolute;
-	bottom: 28%;
-	right: 0;
-	cursor: pointer;
-	text-align: center;
-	font-size: 18px;
-	width: 24em;
-	text-shadow: $text-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 0px 70px 10px 70px;
-}
-
-.p__footer--left p{
-	display: inline-block;
-	float: left;
-	margin-left: 20px;
-	color: white;
-	width: 100%;
-	text-align: left;
-	font-size: 16px;
-	text-shadow: $text-shadow;
-}
-
-.p__footer--middle p{
-	display: inline-block;
-	float: left;
-	margin-left: 0px;
-	color: white;
-	width: 100%;
-	text-align: center;
-	font-size: 16px;
-	text-shadow: $text-shadow;
-}
-
-.p__footer--right p{
-	padding-top: 0px !important;
-	display: inline-block;
-	float: right;
-	color: white;
-	width: 100%;
-	text-align: right;
-	font-size: 22px;
-	text-shadow: $text-shadow;
-}
-
-
-.footer {
-	padding-top: 25px;
-	bottom: 0;
-	height: 82px;
-	width: 100%;
-	padding-bottom: none !important;
-	align: center;
-}
-
-
 }
 
 @media (min-width: $lgWidth) {
-
-#menu-icon{
-    display: none;
-}
-
-.hide { 
-	display: block;
-}
-
-.hide__mobile {
-	display: none;
-}
-
-// IFRAME
-
-iframe{
-	border: none;
-	width: 100%;
-	height: 400px;
-}
-
-#logo{
-	padding-top: 25px;
- 	margin-left: 20px;
- 	width: 25%;
-}
-
-.p__about--center p{
-	text-align: center;
-	margin: 0 auto;
-
-}
-
-.container .p__menu--center p{
-	position: absolute;
-	bottom: 28%;
-	right: 0;
-	cursor: pointer;
-	text-align: center;
-	font-size: 18px;
-	width: 24em;
-	text-shadow: $text-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 0px 70px 10px 70px;
-}
-.container .btn--menu {
-	position: absolute;
-	bottom: 15%;
-	right: 0;
-	transform: translate(-35%, -20%);
-	-ms-transform: translate(-50%, -50%);
-	cursor: pointer;
-	text-align: center;
-	background-color: hsla(360, 100%, 100%, 0.6);
-	font-size: 40px;
-	color: white;
-	text-shadow: $button-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	border-radius: 2px;
-	border: 5px double white;
-	padding: 0px 70px 10px 70px;
-}
-
-.container .p__menu--center p{
-	position: absolute;
-	bottom: 28%;
-	right: 0;
-	cursor: pointer;
-	text-align: center;
-	font-size: 18px;
-	width: 24em;
-	text-shadow: $text-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 0px 70px 10px 70px;
-}
-
-.p__footer--left p{
-	display: inline-block;
-	float: left;
-	margin-left: 20px;
-	color: white;
-	width: 100%;
-	text-align: left;
-	font-size: 16px;
-	text-shadow: $text-shadow;
-}
-
-.p__footer--middle p{
-	display: inline-block;
-	float: left;
-	margin-left: 0px;
-	color: white;
-	width: 100%;
-	text-align: center;
-	font-size: 16px;
-	text-shadow: $text-shadow;
-}
-
-.p__footer--right p{
-	padding-top: 0px !important;
-	display: inline-block;
-	float: right;
-	color: white;
-	width: 100%;
-	text-align: right;
-	font-size: 22px;
-	text-shadow: $text-shadow;
-}
-
-
-.footer {
-	padding-top: 25px;
-	bottom: 0;
-	height: 82px;
-	width: 100%;
-	padding-bottom: none !important;
-	align: center;
-}
 }
 
 /*POSITIONING*/
@@ -631,8 +369,18 @@ iframe{
 // 	position: absolute;
 // }
 
+// PADDING/MARGIN
 
+.padding--bottom{
+	padding-bottom: 3%;
+}
 
+.padding--top{
+	padding-top: 3%;
+}
 
+// BOX
 
-
+.box{
+	height: 400px;
+}
