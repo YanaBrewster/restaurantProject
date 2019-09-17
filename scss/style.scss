@@ -14,7 +14,6 @@
 }
 
 
-
 //ICONS
 
 .fa-phone{
@@ -43,7 +42,8 @@
 }
 .container img {
   padding: 0px;
-  // width: 100%;
+  width: 100%;
+
 }
 
 .menu-items img{
@@ -80,25 +80,8 @@ iframe{
 p {
 	@include text-body;
 	font-size: 1.25em;
-	width: 34em;
+	padding: 2%;
 }
-
-.container .p__menu--center p{
-	position: absolute;
-	bottom: 45%;
-	right: -5%;
-	text-align: center;
-	font-size: 1.5em;
-	text-shadow: $text-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 0px 10% 0px 10%;
-}
-
-.p__menu-items--center p{
-	text-align: center;
-	}
 
 .p__center p{
 	text-align: center;
@@ -157,6 +140,7 @@ h4{
     float: left;
 }
 
+
 // NAVIGATION
 
 .navigation {
@@ -184,31 +168,35 @@ h4{
 #list {
 	float: right;
 	margin-right: 4%;
-	padding-top: 2%;
+	padding-top: 1%;
 	ul{
 			list-style: none;
 			}
 	li{
+			display: inline-block;
+			float: left;
 			font-family: 'Oswald', sans-serif;
 			text-transform: lowercase;
 			font-size: 3em;
-			color: white;
+			margin: 0 8px;
 			text-shadow: $text-shadow;
 
 	 @media screen and (min-width: $mdWidth){
 		 display:inline-block !important;
 		 font-size: 2em;
 		 margin: 0 12px;
-		 padding-top: 4%;
+		 padding-top: 1%;
+		 color: white;
 			#navActive, li:active, {
 			border-bottom: 3px solid $brand-color;
 			}
 	}
 	@media screen and (min-width: $lgWidth){
-			display:inline-block !important;
+			display: inline-block !important;
 			font-size: 2.5em;
 			margin: 0 12px;
 			padding-top: 1%;
+			color: white;
 			#navActive, li:hover, {
 			border-bottom: 3px solid $brand-color;
 			}
@@ -221,6 +209,9 @@ h4{
 }
 
 
+#menu-icon{
+		display: none;
+}
 
 // MOBILE NAVIGATION
 
@@ -228,29 +219,29 @@ h4{
 
 	#menu-icon{
 			display: block;
-			padding-top: 5%;
+			padding-top: 4%;
 			margin-right: 5%;;
 			float: right;
 			color: white;
-			font-size: 4em;
+			font-size: 3.3em;
 	}
 
   #list{
         display: none;
         float: right;
         clear: both;
-        background-color: white;
+        background-color: $brand-color;
         width: 100%;
         padding: 1% 5% 5% 5%;
 				height: 20%;
+
     }
 
     #list ul li{
         display: block;
         float: none;
-        padding-top: 20px;
+        padding-top: 1%;
         font-size: 1.875em;
-				color: $brand-color;
     }
 }
 
@@ -259,11 +250,11 @@ h4{
 .p__footer--left p{
 	display: inline-block;
 	float: left;
-	margin-left: 20px;
+	margin-left: 4%;
 	color: white;
 	width: 100%;
 	text-align: left;
-	font-size: 14px;
+	font-size: 1em;
 	text-shadow: $text-shadow;
 }
 
@@ -272,11 +263,10 @@ h4{
 	float: left;
 	margin-left: 0px;
 	color: white;
-	width: 100%;
 	text-align: center;
-	font-size: 12px;
+	font-size: 0.5em;
 	text-shadow: $text-shadow;
-	margin-left: 30px;
+	margin-left: 1%;
 }
 
 .p__footer--right p{
@@ -284,20 +274,18 @@ h4{
 	display: inline-block;
 	float: right;
 	color: white;
-	width: 100%;
 	text-align: right;
-	font-size: 18px;
-	text-shadow: $text-shadow
+	font-size: 1em;
+	text-shadow: $text-shadow;
 }
 
 
 .footer {
-	padding-top: 25px;
+	padding-top: 2%;
 	bottom: 0;
-	height: 82px;
+	height: 5%;
 	width: 100%;
-	padding-bottom: none !important;
-	align: center;
+	padding-bottom: 2%;
 }
 
 // LINKS
@@ -314,35 +302,133 @@ a:hover {
 	color: white;
 }
 
+// BANNERS
 
-// BUTTON
 
- .btn {
-	text-align: center;
-	text-shadow: $text-shadow;
-	text-align: center;
-	vertical-align: middle;
-	display: inline-block;
-	margin: 0 auto;
-	cursor: pointer;
-	background-color: hsla(360, 100%, 100%, 0.2);
-	font-size: 2em;
-	color: white;
-	border-radius: 2px;
-	border: 5px double white;
-	padding: 0px 70px 10px 70px;
+// .container .p__menu--center p{
+// 	position: absolute;
+// 	bottom: 45%;
+// 	right: -5%;
+// 	text-align: center;
+// 	font-size: 1.5em;
+// 	text-shadow: $text-shadow;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	display: inline-block;
+// 	padding: 0px 10% 0px 10%;
+// }
+//
+// .p__menu-items--center p{
+// 	text-align: center;
+// 	}
+
+
+
+.banner{
+  width: 100%;
+  background-repeat: no-repeat;
+	height: 80vh;
+  background-size: cover;
 }
 
-.container {
-  position: relative;
+.banner-text p{
+  width: 80%;
+  font-size: 1.55em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-reservation{
+  background-image: url("../images/reservations.png");
+}
+
+.banner-menu{
+  background-image: url("../images/menu.png");
   width: 100%;
 }
 
 
-.container .btn:hover {
+// BANNER BUTTON
+
+
+.btn-container {
+  position: relative;
+
+}
+
+.btn-container img {
+  // width: 100%;
+}
+
+.btn-container .banner-btn-reservation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 100%;
+  padding: 16px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+    @media screen and (min-width: $mdWidth){
+      font-size: 1.75em;
+    }
+    @media screen and (min-width: $lgWidth){
+      font-size: 1.75em;
+    }
+
+}
+
+.btn-container .banner-btn-menu {
+  position: absolute;
+  top: 60%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+	text-shadow: $text-shadow;
+  color: white;
+	font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  padding: 16px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+	background-color: hsla(360, 100%, 100%, 0.2);
+	border-radius: 2px;
+	border: 5px double white;
+	padding: 0px 70px 10px 70px;
+
+
+}
+
+.btn-container .btn:hover {
   background-color: hsla(360, 100%, 100%, 0.85);
   color: white;
 }
+
+//  .btn {
+// 	text-align: center;
+// 	text-shadow: $text-shadow;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	display: inline-block;
+// 	margin: 0 auto;
+// 	cursor: pointer;
+// 	background-color: hsla(360, 100%, 100%, 0.2);
+// 	font-size: 2em;
+// 	color: white;
+// 	border-radius: 2px;
+// 	border: 5px double white;
+// 	padding: 0px 70px 10px 70px;
+// }
+
+
+
+
 
 // RESPONSIVE
 
@@ -351,6 +437,7 @@ a:hover {
 
 @media (min-width: $lgWidth) {
 }
+
 
 /*POSITIONING*/
 
