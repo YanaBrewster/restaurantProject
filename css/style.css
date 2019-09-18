@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 .row::after {
   clear: both;
   display: block;
@@ -289,7 +290,8 @@ h2 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px 1px #CCC;
-  font-size: 3em; }
+  font-size: 3em;
+  padding: 2%; }
 
 h3 {
   color: #333333;
@@ -306,7 +308,7 @@ h4 {
   text-shadow: 1px 1px 1px #CCC;
   font-size: 2em;
   text-align: left;
-  padding: 1%; }
+  padding: 2%; }
 
 .card {
   text-align: center; }
@@ -511,14 +513,11 @@ a:hover {
   color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 2em;
-  padding: 16px 30px;
   border-radius: 2px;
-  border: none;
+  border: 5px solid white;
   cursor: pointer;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-  border: 5px double white;
   padding: 0px 70px 10px 70px;
   z-index: +1; }
   @media screen and (min-width: 600px) {
@@ -538,20 +537,18 @@ a:hover {
   color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 2em;
-  padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  border: 5px double white;
-  padding: 0px 70px 10px 70px; }
+  border: 5px solid white;
+  padding: 0px 70px 10px 70px;
+  z-index: +1; }
   @media (min-width: 600px) {
     .btn-container .banner-btn-menu {
       position: absolute;
-      padding: 5px 10px;
-      width: 20%;
+      width: 25%;
       top: 70%;
       left: 85%;
       font-size: 3em; } }
@@ -566,6 +563,57 @@ a:hover {
 .btn-container .btn:hover {
   background-color: rgba(255, 255, 255, 0.45);
   color: white; }
+
+.menu--small .btn {
+  text-align: center;
+  background-color: #99CC99;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px #CCC;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 50px;
+  border: 0px;
+  width: 40%;
+  padding: 1%;
+  margin: 0 auto; }
+
+.menu--small .btn:hover {
+  opacity: 0.6; }
+
+.reservation--form {
+  padding: 1%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25em; }
+  .reservation--form input {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 60%;
+    padding-left: 1%; }
+    @media (max-width: 600px) {
+      .reservation--form input {
+        width: 100%; } }
+  .reservation--form select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    margin-top: 1%;
+    margin-bottom: 1%; }
+
+.submit {
+  padding: 2%;
+  border: 5px double white;
+  font-size: 1.75em !important;
+  text-shadow: 1px 1px 1px #CCC;
+  background-color: #F2F2F2; }
+
+.submit:hover {
+  background-color: #99CC99;
+  color: white;
+  opacity: 0.6; }
 
 .padding--bottom {
   padding-bottom: 3%; }
