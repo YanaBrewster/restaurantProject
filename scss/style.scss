@@ -9,16 +9,14 @@
 	list-style-type: none;
 }
 
-.hide {
-	display: none;
-}
-
-
 //ICONS
 
 .fa-phone{
- 	color: white;
- 	font-size: 2em;
+	color: white;
+	font-size: 2em;
+	@media (max-width: $mdWidth){
+		font-size: 1em;
+	}
 }
 
 .img__reviews--center img{
@@ -28,9 +26,11 @@
 
 .fb-logo img{
 	float: right;
-	right: 0;
 	margin-right: 5%;
-
+	@media (max-width: $mdWidth){
+		float: left;
+		margin-left: 20%;
+	}
 }
 
 // IMAGES
@@ -39,11 +39,6 @@
 	text-align: center;
 	margin: 0 auto;
 	display: block;
-}
-.container img {
-  padding: 0px;
-  width: 100%;
-
 }
 
 .menu-items img{
@@ -72,7 +67,7 @@ iframe{
 }
 
 .brand-color {
-    background-color: $brand-color;
+	background-color: $brand-color;
 }
 
 // TEXT
@@ -86,7 +81,7 @@ p {
 .p__center p{
 	text-align: center;
 	display:block;
-  margin:0 auto;
+	margin:0 auto;
 }
 
 // HEADINGS
@@ -127,17 +122,17 @@ h4{
 }
 
 .row{
-    &::after{
-	@include clear;
-    }
+	&::after{
+		@include clear;
+	}
 }
 
 .row--no-padding{
-    margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 .col{
-    float: left;
+	float: left;
 }
 
 
@@ -145,104 +140,108 @@ h4{
 
 .navigation {
 	height: 13%;
+	@media screen and (min-width: $mdWidth){
+		height: 18%;
+	}
 	@media screen and (min-width: $lgWidth){
-	height: 15%;
-		}
+		height: 15%;
+	}
 }
 
 .nav__fixed{
 	// overflow: hidden;
 	position: fixed;
 	top: 0;
-  	width: 100%;
-  	z-index: 1
+	width: 100%;
+	z-index: 1
 }
 
 #logo{
 	padding-top: 4%;
- 	margin-left: 4%;
- 	width: 100%;
+	margin-left: 4%;
+	width: 100%;
 }
-
 
 #list {
 	float: right;
 	margin-right: 4%;
 	padding-top: 1%;
 	ul{
-			list-style: none;
-			}
-	li{
-			display: inline-block;
-			float: left;
-			font-family: 'Oswald', sans-serif;
-			text-transform: lowercase;
-			font-size: 3em;
-			margin: 0 8px;
-			text-shadow: $text-shadow;
-
-	 @media screen and (min-width: $mdWidth){
-		 display:inline-block !important;
-		 font-size: 2em;
-		 margin: 0 12px;
-		 padding-top: 1%;
-		 color: white;
-			#navActive, li:active, {
-			border-bottom: 3px solid $brand-color;
-			}
+		list-style: none;
 	}
-	@media screen and (min-width: $lgWidth){
+	li{
+		display: inline-block;
+		float: left;
+		font-family: 'Oswald', sans-serif;
+		text-transform: lowercase;
+		font-size: 3em;
+		margin: 0 8px;
+		text-shadow: $text-shadow;
+
+		@media screen and (min-width: $mdWidth){
+			display: inline-block !important;
+			font-size: 2em;
+			margin: 0 12px;
+			padding-top: 1%;
+			color: white;
+			#navActive, li:active, {
+				border-bottom: 3px solid $brand-color;
+			}
+		}
+		@media screen and (min-width: $lgWidth){
 			display: inline-block !important;
 			font-size: 2.5em;
 			margin: 0 12px;
 			padding-top: 1%;
 			color: white;
 			#navActive, li:hover, {
-			border-bottom: 3px solid $brand-color;
+				border-bottom: 3px solid $brand-color;
 			}
+		}
+	}
+
+	a:hover, #nav__active {
+		border-bottom: 3px solid white;
 	}
 }
-
- a:hover, #nav__active {
-	border-bottom: 3px solid white;
-}
-}
-
 
 #menu-icon{
-		display: none;
+	display: none;
 }
 
-// MOBILE NAVIGATION
+// MOBILE/TABLET NAVIGATION
 
-@media screen and (max-width: $mdWidth){
+@media screen and (max-width: $lgWidth){
 
 	#menu-icon{
-			display: block;
-			padding-top: 4%;
+		display: block;
+		padding-top: 4%;
+		margin-right: 5%;;
+		float: right;
+		color: white;
+		font-size: 3.3em;
+		@media screen and (min-width: $mdWidth){
 			margin-right: 5%;;
-			float: right;
-			color: white;
-			font-size: 3.3em;
+		}
 	}
 
-  #list{
-        display: none;
-        float: right;
-        clear: both;
-        background-color: $brand-color;
-        width: 100%;
-        padding: 1% 5% 5% 5%;
-				height: 20%;
+	#list{
+		display: none;
+		float: right;
+		clear: both;
+		background-color: $brand-color;
+		width: 100%;
+		padding: 1% 5% 5% 5%;
+		height: 20%;
 
-    }
+	}
 
-    #list ul li{
-        display: block;
-        float: none;
-        padding-top: 1%;
-        font-size: 1.875em;
-    }
+	#list ul li{
+		display: block;
+		float: none;
+		padding-top: 1%;
+		font-size: 1.875em;
+	}
 }
 
 // FOOTER
@@ -250,7 +249,7 @@ h4{
 .p__footer--left p{
 	display: inline-block;
 	float: left;
-	margin-left: 4%;
+	margin-left: 3%;
 	color: white;
 	width: 100%;
 	text-align: left;
@@ -261,12 +260,14 @@ h4{
 .p__footer--middle p{
 	display: inline-block;
 	float: left;
-	margin-left: 0px;
 	color: white;
 	text-align: center;
-	font-size: 0.5em;
+	font-size: 1em;
 	text-shadow: $text-shadow;
 	margin-left: 1%;
+	@media (max-width: $mdWidth){
+		display: none;
+	}
 }
 
 .p__footer--right p{
@@ -286,6 +287,10 @@ h4{
 	height: 5%;
 	width: 100%;
 	padding-bottom: 2%;
+	@media (max-width: $mdWidth){
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
 }
 
 // LINKS
@@ -295,7 +300,7 @@ a:link {
 }
 
 a:visited {
-  	color: white;
+	color: white;
 }
 
 a:hover {
@@ -304,127 +309,119 @@ a:hover {
 
 // BANNERS
 
-
-// .container .p__menu--center p{
-// 	position: absolute;
-// 	bottom: 45%;
-// 	right: -5%;
-// 	text-align: center;
-// 	font-size: 1.5em;
-// 	text-shadow: $text-shadow;
-// 	text-align: center;
-// 	vertical-align: middle;
-// 	display: inline-block;
-// 	padding: 0px 10% 0px 10%;
-// }
-//
-// .p__menu-items--center p{
-// 	text-align: center;
-// 	}
-
-
-
 .banner{
-  width: 100%;
-  background-repeat: no-repeat;
-	height: 80vh;
-  background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .banner-text p{
-  width: 80%;
-  font-size: 1.55em;
-  margin: 0 auto;
-  text-align: center;
+	font-size: 1.25em;
+	margin: 0 auto;
+	text-align: center;
+	width: 80%;
+	@media (min-width: $mdWidth){
+		font-size: 1.25em;
+		position: absolute;
+		text-align: center;
+		width: 35%;
+		top: 7%;
+		left: 65%;
+	}
+	@media (min-width: $lgWidth){
+		font-size: 1.5em;
+		position: absolute;
+		text-align: center;
+		width: 30%;
+		top: 25%;
+		left: 65%;
+	}
 }
-
-.banner-reservation{
-  background-image: url("../images/reservations.png");
-}
-
-.banner-menu{
-  background-image: url("../images/menu.png");
-  width: 100%;
-}
-
 
 // BANNER BUTTON
 
 
 .btn-container {
-  position: relative;
-
+	position: relative;
 }
 
 .btn-container img {
-  // width: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .btn-container .banner-btn-reservation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  color: white;
-  font-size: 100%;
-  padding: 16px 30px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-    @media screen and (min-width: $mdWidth){
-      font-size: 1.75em;
-    }
-    @media screen and (min-width: $lgWidth){
-      font-size: 1.75em;
-    }
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-shadow: $button-shadow;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 2em;
+	padding: 16px 30px;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	background-color: hsla(360, 100%, 100%, 0.3);
+	border-radius: 2px;
+	border: 5px double white;
+	padding: 0px 70px 10px 70px;
+	z-index: +1;
+	@media screen and (min-width: $mdWidth){
+		font-size: 3em;
+	}
+	@media screen and (min-width: $lgWidth){
+		font-size: 3em;
+	}
 
 }
 
 .btn-container .banner-btn-menu {
-  position: absolute;
-  top: 60%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-	text-shadow: $text-shadow;
-  color: white;
+	position: absolute;
+	top: 30%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-shadow: $button-shadow;
+	color: white;
 	font-family: 'Oswald', sans-serif;
-  font-size: 3em;
-  padding: 16px 30px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
+	font-size: 2em;
+	padding: 10px 20px;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
 	background-color: hsla(360, 100%, 100%, 0.2);
 	border-radius: 2px;
 	border: 5px double white;
 	padding: 0px 70px 10px 70px;
 
-
+	@media (min-width: $mdWidth){
+		position: absolute;
+		padding: 5px 10px;
+		width: 20%;
+		top: 70%;
+		left: 85%;
+		font-size: 3em;
+	}
+	@media (min-width: $lgWidth){
+		position: absolute;
+		width: 15%;
+		top: 60%;
+		left: 80%;
+		font-size: 3em;
+	}
 }
+
 
 .btn-container .btn:hover {
-  background-color: hsla(360, 100%, 100%, 0.85);
-  color: white;
+	background-color: hsla(360, 100%, 100%, 0.45);
+	color: white;
 }
 
-//  .btn {
-// 	text-align: center;
-// 	text-shadow: $text-shadow;
-// 	text-align: center;
-// 	vertical-align: middle;
-// 	display: inline-block;
-// 	margin: 0 auto;
-// 	cursor: pointer;
-// 	background-color: hsla(360, 100%, 100%, 0.2);
-// 	font-size: 2em;
-// 	color: white;
-// 	border-radius: 2px;
-// 	border: 5px double white;
-// 	padding: 0px 70px 10px 70px;
-// }
 
 
 
@@ -438,23 +435,6 @@ a:hover {
 @media (min-width: $lgWidth) {
 }
 
-
-/*POSITIONING*/
-
-// .relative{
-// 	position: relative;
-// 	width: 500px;
-// 	top: -100px;
-// 	left: 200px;
-// }
-
-// .relative{
-// 	position: relative;
-// }
-
-// .absolute{
-// 	position: absolute;
-// }
 
 // PADDING/MARGIN
 

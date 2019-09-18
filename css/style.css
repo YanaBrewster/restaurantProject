@@ -229,12 +229,12 @@
   text-decoration: none;
   list-style-type: none; }
 
-.hide {
-  display: none; }
-
 .fa-phone {
   color: white;
   font-size: 2em; }
+  @media (max-width: 600px) {
+    .fa-phone {
+      font-size: 1em; } }
 
 .img__reviews--center img {
   text-align: center;
@@ -242,17 +242,16 @@
 
 .fb-logo img {
   float: right;
-  right: 0;
   margin-right: 5%; }
+  @media (max-width: 600px) {
+    .fb-logo img {
+      float: left;
+      margin-left: 20%; } }
 
 .reviews--center img {
   text-align: center;
   margin: 0 auto;
   display: block; }
-
-.container img {
-  padding: 0px;
-  width: 100%; }
 
 .menu-items img {
   width: 100%;
@@ -276,7 +275,7 @@ iframe {
 p {
   color: #333333;
   font-family: 'Oswald', sans-serif;
-  text-shadow: -3px -3px -3px #CCC;
+  text-shadow: 1px 1px 1px #CCC;
   font-size: 1.25em;
   padding: 2%; }
 
@@ -288,23 +287,23 @@ p {
 h2 {
   color: #333333;
   font-family: 'Oswald', sans-serif;
-  font-style: bold;
-  text-shadow: -3px -3px -3px #CCC;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #CCC;
   font-size: 3em; }
 
 h3 {
   color: #333333;
   font-family: 'Oswald', sans-serif;
-  font-style: bold;
-  text-shadow: -3px -3px -3px #CCC;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #CCC;
   font-size: 2.5em;
   text-align: center; }
 
 h4 {
   color: #333333;
   font-family: 'Oswald', sans-serif;
-  font-style: bold;
-  text-shadow: -3px -3px -3px #CCC;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #CCC;
   font-size: 2em;
   text-align: left;
   padding: 1%; }
@@ -334,6 +333,9 @@ h4 {
 
 .navigation {
   height: 13%; }
+  @media screen and (min-width: 600px) {
+    .navigation {
+      height: 18%; } }
   @media screen and (min-width: 960px) {
     .navigation {
       height: 15%; } }
@@ -362,7 +364,7 @@ h4 {
     text-transform: lowercase;
     font-size: 3em;
     margin: 0 8px;
-    text-shadow: -3px -3px -3px #CCC; }
+    text-shadow: 1px 1px 1px #CCC; }
     @media screen and (min-width: 600px) {
       #list li {
         display: inline-block !important;
@@ -387,15 +389,19 @@ h4 {
 #menu-icon {
   display: none; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 960px) {
   #menu-icon {
     display: block;
     padding-top: 4%;
     margin-right: 5%;
     float: right;
     color: white;
-    font-size: 3.3em; }
+    font-size: 3.3em; } }
+  @media screen and (max-width: 960px) and (min-width: 600px) {
+    #menu-icon {
+      margin-right: 5%; } }
 
+@media screen and (max-width: 960px) {
   #list {
     display: none;
     float: right;
@@ -413,22 +419,24 @@ h4 {
 .p__footer--left p {
   display: inline-block;
   float: left;
-  margin-left: 4%;
+  margin-left: 3%;
   color: white;
   width: 100%;
   text-align: left;
   font-size: 1em;
-  text-shadow: -3px -3px -3px #CCC; }
+  text-shadow: 1px 1px 1px #CCC; }
 
 .p__footer--middle p {
   display: inline-block;
   float: left;
-  margin-left: 0px;
   color: white;
   text-align: center;
-  font-size: 0.5em;
-  text-shadow: -3px -3px -3px #CCC;
+  font-size: 1em;
+  text-shadow: 1px 1px 1px #CCC;
   margin-left: 1%; }
+  @media (max-width: 600px) {
+    .p__footer--middle p {
+      display: none; } }
 
 .p__footer--right p {
   padding-top: 0px !important;
@@ -437,7 +445,7 @@ h4 {
   color: white;
   text-align: right;
   font-size: 1em;
-  text-shadow: -3px -3px -3px #CCC; }
+  text-shadow: 1px 1px 1px #CCC; }
 
 .footer {
   padding-top: 2%;
@@ -445,6 +453,10 @@ h4 {
   height: 5%;
   width: 100%;
   padding-bottom: 2%; }
+  @media (max-width: 600px) {
+    .footer {
+      padding-top: 3%;
+      padding-bottom: 3%; } }
 
 a:link {
   color: white; }
@@ -456,26 +468,38 @@ a:hover {
   color: white; }
 
 .banner {
-  width: 100%;
   background-repeat: no-repeat;
-  height: 80vh;
   background-size: cover; }
 
 .banner-text p {
-  width: 80%;
-  font-size: 1.55em;
+  font-size: 1.25em;
   margin: 0 auto;
-  text-align: center; }
-
-.banner-reservation {
-  background-image: url("../images/reservations.png"); }
-
-.banner-menu {
-  background-image: url("../images/menu.png");
-  width: 100%; }
+  text-align: center;
+  width: 80%; }
+  @media (min-width: 600px) {
+    .banner-text p {
+      font-size: 1.25em;
+      position: absolute;
+      text-align: center;
+      width: 35%;
+      top: 7%;
+      left: 65%; } }
+  @media (min-width: 960px) {
+    .banner-text p {
+      font-size: 1.5em;
+      position: absolute;
+      text-align: center;
+      width: 30%;
+      top: 25%;
+      left: 65%; } }
 
 .btn-container {
   position: relative; }
+
+.btn-container img {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .btn-container .banner-btn-reservation {
   position: absolute;
@@ -483,31 +507,38 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px #202020;
   color: white;
-  font-size: 100%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
   padding: 16px 30px;
-  border-radius: 50px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  border: 5px double white;
+  padding: 0px 70px 10px 70px;
+  z-index: +1; }
   @media screen and (min-width: 600px) {
     .btn-container .banner-btn-reservation {
-      font-size: 1.75em; } }
+      font-size: 3em; } }
   @media screen and (min-width: 960px) {
     .btn-container .banner-btn-reservation {
-      font-size: 1.75em; } }
+      font-size: 3em; } }
 
 .btn-container .banner-btn-menu {
   position: absolute;
-  top: 60%;
-  left: 85%;
+  top: 30%;
+  left: 75%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-shadow: -3px -3px -3px #CCC;
+  text-shadow: 2px 2px 4px #202020;
   color: white;
   font-family: 'Oswald', sans-serif;
-  font-size: 3em;
-  padding: 16px 30px;
+  font-size: 2em;
+  padding: 10px 20px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -516,12 +547,26 @@ a:hover {
   border-radius: 2px;
   border: 5px double white;
   padding: 0px 70px 10px 70px; }
+  @media (min-width: 600px) {
+    .btn-container .banner-btn-menu {
+      position: absolute;
+      padding: 5px 10px;
+      width: 20%;
+      top: 70%;
+      left: 85%;
+      font-size: 3em; } }
+  @media (min-width: 960px) {
+    .btn-container .banner-btn-menu {
+      position: absolute;
+      width: 15%;
+      top: 60%;
+      left: 80%;
+      font-size: 3em; } }
 
 .btn-container .btn:hover {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.45);
   color: white; }
 
-/*POSITIONING*/
 .padding--bottom {
   padding-bottom: 3%; }
 
